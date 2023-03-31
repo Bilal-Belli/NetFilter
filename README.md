@@ -1,4 +1,4 @@
-# Bad Websites Blocker
+# Bad Websites Blocker (NoFap)
 <h2 align="left">About</h2>
 <div >
     <h3 align="left">1. Describe</h3>
