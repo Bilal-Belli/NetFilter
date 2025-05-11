@@ -1,4 +1,4 @@
-# Bad Websites Blocker (NoFap)
+# Bad Websites Blocker (NetFilter)
 <h2 align="left">About</h2>
 <div >
     <h3 align="left">1. Describe</h3>
