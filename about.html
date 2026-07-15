@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About NetFilter</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+      :root {
+        --bg-primary: #0f172a;
+        --bg-secondary: #1e293b;
+        --text-primary: #f8fafc;
+        --text-secondary: #94a3b8;
+        --accent: #6366f1;
+        --border: rgba(255, 255, 255, 0.06);
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: 'Outfit', sans-serif;
+        background-color: var(--bg-primary);
+        color: var(--text-primary);
+        line-height: 1.6;
+        padding: 40px 20px;
+      }
+
+      .container {
+        max-width: 680px;
+        margin: 0 auto;
+        background-color: var(--bg-secondary);
+        border: 1px solid var(--border);
+        padding: 40px;
+        border-radius: 16px;
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        text-align: center;
+      }
+
+      header {
+        border-bottom: 1px solid var(--border);
+        padding-bottom: 20px;
+        margin-bottom: 30px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+      }
+
+      .logo-img {
+        width: 100px;
+        height: 100px;
+        object-fit: contain;
+      }
+
+      h1 {
+        font-size: 32px;
+        font-weight: 700;
+        letter-spacing: -0.025em;
+      }
+
+      .tagline {
+        font-size: 16px;
+        color: var(--text-secondary);
+        max-width: 80%;
+        margin: 0 auto;
+        font-weight: 400;
+      }
+
+      .card {
+        background-color: rgba(255, 255, 255, 0.02);
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        padding: 24px;
+        margin-bottom: 20px;
+        text-align: left;
+      }
+
+      h2 {
+        font-size: 18px;
+        font-weight: 600;
+        color: var(--accent);
+        margin-bottom: 10px;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+      }
+
+      p {
+        color: var(--text-secondary);
+        font-size: 14px;
+        margin-bottom: 12px;
+        line-height: 1.6;
+      }
+
+      ul {
+        margin-left: 20px;
+        margin-bottom: 15px;
+        color: var(--text-secondary);
+        font-size: 14px;
+      }
+
+      li {
+        margin-bottom: 8px;
+      }
+
+      footer {
+        margin-top: 40px;
+        border-top: 1px solid var(--border);
+        padding-top: 20px;
+        text-align: center;
+        font-size: 12px;
+        color: var(--text-secondary);
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <header>
+        <img src="img/logo.png" alt="NetFilter Logo" class="logo-img">
+        <h1>NetFilter</h1>
+        <p class="tagline">"Get away from bad sites, focus on what matters, and live naturally in peace."</p>
+      </header>
+
+      <main>
+        <div class="card">
+          <h2>What is NetFilter?</h2>
+          <p>NetFilter is a professional, high-performance browser extension developed by Bilal Belli. The primary
+            purpose is to block access to distraction-heavy and harmful websites so you can keep focus and maintain a
+            healthy digital life.</p>
+          <p>By preventing connections to bad sites before pages start resolving in your browser, NetFilter ensures a
+            seamless and interruption-free experience.</p>
+        </div>
+
+        <div class="card">
+          <h2>Key Features</h2>
+          <ul>
+            <li><strong>Pre-Navigation Filtering:</strong> Inspects navigation requests before they resolve to keep your
+              browser fast and clean.</li>
+            <li><strong>Default Protection:</strong> Includes blocks for 17,000+ domain hashes out-of-the-box.</li>
+            <li><strong>Custom Blocklist:</strong> Add and delete custom domains to fit your unique requirements.</li>
+            <li><strong>Activity Logs:</strong> Locally records intercepted site attempts so you can review statistics.
+            </li>
+            <li><strong>100% Privacy Focused:</strong> No cloud synchronization or central APIs. All data belongs to you
+              and remains on your hard drive.</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h2>Update Requests</h2>
+          <p>To request new sites to be added to the default blocklist, please submit an issue or email us at
+            <strong>jb_belli at esi dot dz</strong>. Requests are processed within 48 hours.</p>
+        </div>
+      </main>
+
+      <footer>
+        Version 1.0.0 • Developed by Mr. Bilal Belli
+      </footer>
+    </div>
+  </body>
+
+</html>

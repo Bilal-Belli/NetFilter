@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - NetFilter</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+      :root {
+        --bg-primary: #0f172a;
+        --bg-secondary: #1e293b;
+        --text-primary: #f8fafc;
+        --text-secondary: #94a3b8;
+        --accent: #6366f1;
+        --border: rgba(255, 255, 255, 0.06);
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: 'Outfit', sans-serif;
+        background-color: var(--bg-primary);
+        color: var(--text-primary);
+        line-height: 1.6;
+        padding: 40px 20px;
+      }
+
+      .container {
+        max-width: 680px;
+        margin: 0 auto;
+        background-color: var(--bg-secondary);
+        border: 1px solid var(--border);
+        padding: 40px;
+        border-radius: 16px;
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+      }
+
+      header {
+        border-bottom: 1px solid var(--border);
+        padding-bottom: 20px;
+        margin-bottom: 30px;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+      }
+
+      .logo-img {
+        width: 40px;
+        height: 40px;
+      }
+
+      h1 {
+        font-size: 28px;
+        font-weight: 700;
+        letter-spacing: -0.025em;
+      }
+
+      h2 {
+        font-size: 18px;
+        font-weight: 600;
+        color: var(--accent);
+        margin-top: 25px;
+        margin-bottom: 10px;
+      }
+
+      p {
+        color: var(--text-secondary);
+        font-size: 14px;
+        margin-bottom: 15px;
+      }
+
+      ul {
+        margin-left: 20px;
+        margin-bottom: 15px;
+        color: var(--text-secondary);
+        font-size: 14px;
+      }
+
+      li {
+        margin-bottom: 8px;
+      }
+
+      footer {
+        margin-top: 40px;
+        border-top: 1px solid var(--border);
+        padding-top: 20px;
+        text-align: center;
+        font-size: 12px;
+        color: var(--text-secondary);
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <header>
+        <img src="img/logo.png" alt="NetFilter Logo" class="logo-img">
+        <h1>NetFilter Privacy Policy</h1>
+      </header>
+
+      <main>
+        <p>Last updated: July 16, 2026</p>
+
+        <p>At NetFilter, we believe that your web browsing history is private. This Privacy Policy details how we handle
+          information inside the NetFilter Chrome extension.</p>
+
+        <h2>1. Local Processing Only</h2>
+        <p>NetFilter performs all of its filtering operations directly on your computer. When you load a webpage:</p>
+        <ul>
+          <li>The domain checking algorithm hashes and checks domains locally within the background service worker.</li>
+          <li>Your activity logs are stored on your local device using standard Google Chrome Storage API
+            (`chrome.storage.local`).</li>
+          <li>We do not operate any external APIs or cloud databases to track your visits.</li>
+        </ul>
+
+        <h2>2. Data Collection</h2>
+        <p>NetFilter <strong>does not collect, transmit, sell, or rent</strong> any of your browsing logs, visited URLs,
+          block settings, or usage telemetry. Everything remains local on your device.</p>
+
+        <h2>3. Storage Permissions</h2>
+        <p>The extension uses the following Chrome Extension APIs:</p>
+        <ul>
+          <li><code>storage</code>: To save your active toggle settings, custom block lists, and activity history
+            locally.</li>
+          <li><code>webNavigation</code>: Intercepts connection attempts prior to page loading to determine if the
+            target matches a blocked website. This inspection happens fully in memory.</li>
+        </ul>
+
+        <h2>4. User Rights & Data Deletion</h2>
+        <p>You have full ownership of your data. You can delete your custom blocklist and clear all activity logs at any
+          time from the NetFilter side panel dashboard. Uninstalling the extension automatically removes all associated
+          storage blocks from your system.</p>
+
+        <h2>5. Contact Us</h2>
+        <p>If you have any questions or feedback regarding our privacy practices, feel free to drop an email at jb_belli
+          at esi dot dz.</p>
+      </main>
+
+      <footer>
+        &copy; 2026 NetFilter. Built for Privacy.
+      </footer>
+    </div>
+  </body>
+
+</html>
