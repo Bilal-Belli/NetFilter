@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NetFilter Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="sidepanel.css">
+</head>
+<body>
+  <div class="app-container">
+    
+    <!-- Top Header -->
+    <header class="app-header">
+      <div class="logo-container">
+        <img src="img/logo.png" alt="NetFilter Logo" class="app-logo">
+        <div class="logo-text">
+          <h1>NetFilter</h1>
+          <span class="version-badge">v1.0.0</span>
+        </div>
+      </div>
+      <div class="status-indicator">
+        <div id="status-pulse" class="pulse active"></div>
+        <span id="status-text">Protected</span>
+      </div>
+    </header>
+
+    <!-- Main Screens Viewport -->
+    <main class="app-viewport">
+      
+      <!-- Panel 1: Dashboard -->
+      <section id="panel-dashboard" class="nav-panel active">
+        <div class="card shield-card">
+          <div class="shield-icon-container">
+            <svg class="shield-svg" id="shield-svg-active" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 22C12 22 20 18 20 12V5L12 2L4 5V12C4 18 12 22 12 22Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M9 12L11 14L15 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          
+          <div class="protection-header">
+            <h3>Web Protection</h3>
+            <p id="shield-subtext">Filter active. Bad sites are blocked.</p>
+          </div>
+
+          <label class="switch">
+            <input type="checkbox" id="blocker-toggle" checked>
+            <span class="slider round"></span>
+          </label>
+        </div>
+
+        <div class="stats-grid">
+          <div class="stat-card">
+            <span class="stat-value" id="stat-blocked-count">0</span>
+            <span class="stat-label">Blocked Attempts</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-value">17,000+</span>
+            <span class="stat-label">Built-in Sites</span>
+          </div>
+        </div>
+
+        <div class="card info-card">
+          <h4>Smart Protection</h4>
+          <p>NetFilter runs locally in your browser to check and block malicious websites before they even start resolving. Your browsing history never leaves your device.</p>
+        </div>
+      </section>
+
+      <!-- Panel 2: Blocklist Manager -->
+      <section id="panel-blocklist" class="nav-panel">
+        <div class="panel-header">
+          <h2>Custom Blocklist</h2>
+          <p>Add specific domains to block permanently.</p>
+        </div>
+
+        <form id="add-block-form" class="add-form">
+          <input type="text" id="block-input" placeholder="e.g. badsite.com" required autocomplete="off">
+          <button type="submit" class="btn-primary">Add</button>
+        </form>
+
+        <div class="list-container">
+          <ul id="custom-blocked-list" class="custom-list">
+            <!-- Rendered dynamically -->
+          </ul>
+          <div id="blocklist-empty" class="empty-state">
+            <svg class="empty-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="currentColor" stroke-width="2"/>
+              <path d="M12 8V12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <path d="M12 16H12.01" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+            <p>No custom websites blocked yet.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Panel 3: Activity Logs -->
+      <section id="panel-logs" class="nav-panel">
+        <div class="panel-header-row">
+          <div>
+            <h2>Activity Logs</h2>
+            <p>Recently intercepted websites.</p>
+          </div>
+          <button id="clear-logs-btn" class="btn-danger-outline">Clear Logs</button>
+        </div>
+
+        <div class="search-bar">
+          <svg class="search-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M11 19C15.4183 19 19 15.4183 19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19Z" stroke="currentColor" stroke-width="2"/>
+            <path d="M21 21L16.65 16.65" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+          <input type="text" id="log-search" placeholder="Search blocked websites...">
+        </div>
+
+        <div class="list-container">
+          <ul id="logs-list" class="custom-list">
+            <!-- Rendered dynamically -->
+          </ul>
+          <div id="logs-empty" class="empty-state">
+            <svg class="empty-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M9 12L11 14L15 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="currentColor" stroke-width="2"/>
+            </svg>
+            <p>Your history is clean!</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Panel 4: Help & Links -->
+      <section id="panel-support" class="nav-panel">
+        <div class="panel-header">
+          <h2>Help & Support</h2>
+          <p>Report issues, rate, or support the project.</p>
+        </div>
+
+        <div class="menu-list">
+          <a href="#" id="link-report" class="menu-item">
+            <div class="menu-item-left">
+              <div class="menu-item-icon support-yellow">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 9V14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                  <path d="M12 17.01H12.01" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                  <path d="M10.29 3.86L1.82 18C1.64537 18.3024 1.55299 18.6453 1.55194 18.9945C1.5509 19.3437 1.64124 19.6868 1.81394 19.9892C1.98664 20.2917 2.23559 20.5424 2.53592 20.7163C2.83625 20.8903 3.1775 20.9813 3.524 20.98H20.48C20.8265 20.9813 21.1678 20.8903 21.4681 20.7163C21.7684 20.5424 22.0174 20.2917 22.1901 19.9892C22.3628 19.6868 22.4531 19.3437 22.4521 18.9945C22.451 18.6453 22.3586 18.3024 22.18 18L13.71 3.86C13.5317 3.55938 13.2801 3.31057 12.98 3.13813C12.6798 2.9657 12.3396 2.875 11.993 2.875C11.6464 2.875 11.3062 2.9657 11.006 3.13813C10.7058 3.31057 10.4543 3.55938 10.29 3.86V3.86Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <div class="menu-item-text">
+                <h3>Report an Issue</h3>
+                <p>Found a bug or wrong block? Let us know.</p>
+              </div>
+            </div>
+            <svg class="chevron-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M9 5L16 12L9 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+
+          <a href="#" id="link-rate" class="menu-item">
+            <div class="menu-item-left">
+              <div class="menu-item-icon support-blue">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <div class="menu-item-text">
+                <h3>Rate the Extension</h3>
+                <p>Show your appreciation on the Web Store.</p>
+              </div>
+            </div>
+            <svg class="chevron-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M9 5L16 12L9 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+
+          <a href="#" id="link-support" class="menu-item">
+            <div class="menu-item-left">
+              <div class="menu-item-icon support-green">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 20C7.59 20 4 16.41 4 12C4 7.59 7.59 4 12 4C16.41 4 20 7.59 20 12C20 16.41 16.41 20 12 20ZM11 8H13V10H11V8ZM11 12H13V16H11V12Z" fill="currentColor"/>
+                  <path d="M12 18C15.3137 18 18 15.3137 18 12C18 8.68629 15.3137 6 12 6C8.68629 6 6 8.68629 6 12C6 15.3137 8.68629 18 12 18Z" stroke="currentColor" stroke-width="2"/>
+                </svg>
+              </div>
+              <div class="menu-item-text">
+                <h3>Support Us</h3>
+                <p>Help us maintain and improve NetFilter.</p>
+              </div>
+            </div>
+            <svg class="chevron-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M9 5L16 12L9 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- Bottom Nav Bar (Mobile App Style) -->
+    <nav class="app-nav">
+      <button class="nav-btn active" data-panel="panel-dashboard">
+        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 9L12 2L21 9V20C21 20.5304 20.7893 21.0391 20.4142 21.4142C20.0391 21.7893 19.5304 22 19 22H5C4.46957 22 3.96086 21.7893 3.58579 21.4142C3.21071 21.0391 3 20.5304 3 20V9Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M9 22V12H15V22" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span>Home</span>
+      </button>
+      
+      <button class="nav-btn" data-panel="panel-blocklist">
+        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="currentColor" stroke-width="2"/>
+          <path d="M12 8V16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          <path d="M8 12H16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        <span>Blocklist</span>
+      </button>
+
+      <button class="nav-btn" data-panel="panel-logs">
+        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 8V12L15 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M3.05 11C3.5 6.5 7.35 3 12 3C16.82 3 20.78 6.7 21 11.5C21.22 16.3 17.7 20.44 13 20.95C8.3 21.46 3.93 18.25 3.12 13.62" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        <span>Logs</span>
+      </button>
+
+      <button class="nav-btn" data-panel="panel-support">
+        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+          <path d="M12 16V12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          <path d="M12 8H12.01" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        <span>Help</span>
+      </button>
+    </nav>
+
+    <!-- Persistent App Footer -->
+    <footer class="app-footer">
+      <a href="#" id="link-privacy">Privacy Policy</a>
+      <span class="footer-separator">•</span>
+      <a href="#" id="link-terms">Terms of Use</a>
+      <span class="footer-separator">•</span>
+      <a href="#" id="link-about">About</a>
+    </footer>
+
+  </div>
+  <script src="sidepanel.js"></script>
+</body>
+</html>
