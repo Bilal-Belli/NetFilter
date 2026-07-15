@@ -1,29 +1,31 @@
 {
   "manifest_version": 3,
-  "name": "NoFap",
+  "name": "NetFilter",
   "description": "Bad Websites Blocker",
   "version": "1.0.0",
-  "icons": {"16":"img/logo16.png",
-            "48":"img/logo48.png",
-            "128":"img/logo128.png"
-          },
+  "icons": {
+    "16": "img/logo16.png",
+    "48": "img/logo48.png",
+    "128": "img/logo128.png"
+  },
   "action": {
     "default_icon": {
-      "16": "img/logo16.png"
-    }
+      "16": "img/logo16.png",
+      "48": "img/logo48.png",
+      "128": "img/logo128.png"
+    },
+    "default_title": "NetFilter Dashboard"
   },
-  "options_page" : "options.html",
+  "side_panel": {
+    "default_path": "sidepanel.html"
+  },
   "permissions": [
+    "sidePanel",
+    "storage",
     "tabs",
-    "storage"
+    "webNavigation"
   ],
-  "content_scripts":[
-    {
-      "matches":["<all_urls>"],
-      "js":["contentscript.js"],
-      "run_at":"document_start"
-    }
-  ],
+  "options_page": "sidepanel.html",
   "background": {
     "service_worker": "background.js"
   }

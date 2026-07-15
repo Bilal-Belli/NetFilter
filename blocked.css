@@ -1,0 +1,215 @@
+/* NetFilter - Blocked Alert Page Stylesheet */
+
+:root {
+  --bg-primary: #0a0f1d;    /* Extra dark Slate */
+  --bg-secondary: #131b2e;  /* Slate 900 equivalent */
+  --bg-tertiary: #1e293b;   /* Slate 800 equivalent */
+  
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+  --text-muted: #64748b;
+  
+  --accent-primary: #6366f1;/* Indigo 500 */
+  --accent-hover: #4f46e5;  
+  
+  --danger: #f43f5e;        /* Rose 500 */
+  --danger-glow: rgba(244, 63, 94, 0.2);
+  
+  --border-color: rgba(255, 255, 255, 0.06);
+  --radius-md: 12px;
+  --radius-lg: 16px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Outfit', sans-serif;
+  background-color: var(--bg-primary);
+  background-image: radial-gradient(circle at center, #111827 0%, #030712 100%);
+  color: var(--text-primary);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.blocked-container {
+  max-width: 480px;
+  width: 90%;
+  text-align: center;
+  background-color: rgba(19, 27, 46, 0.4);
+  border: 1px solid var(--border-color);
+  padding: 40px 30px;
+  border-radius: var(--radius-lg);
+  backdrop-filter: blur(16px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+/* Shield Graphic */
+.shield-graphic {
+  position: relative;
+  width: 90px;
+  height: 90px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.pulse-ring {
+  position: absolute;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background-color: var(--danger-glow);
+  animation: pulse-ring-anim 2.5s infinite;
+}
+
+.shield-badge {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: rgba(244, 63, 94, 0.1);
+  border: 2px solid var(--danger);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--danger);
+  z-index: 2;
+  box-shadow: 0 0 15px rgba(244, 63, 94, 0.3);
+}
+
+.warning-shield {
+  width: 32px;
+  height: 32px;
+}
+
+@keyframes pulse-ring-anim {
+  0% {
+    transform: scale(0.7);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.4;
+  }
+  100% {
+    transform: scale(1.3);
+    opacity: 0;
+  }
+}
+
+/* Header */
+.blocked-header h1 {
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  margin-bottom: 8px;
+  color: var(--text-primary);
+}
+
+.blocked-header p {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+/* URL Card */
+.url-card {
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border-color);
+  padding: 12px 16px;
+  border-radius: var(--radius-md);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.url-label {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.url-value {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--danger);
+  word-break: break-all;
+  max-width: 100%;
+}
+
+/* Motivation Card */
+.motivation-quote {
+  font-style: italic;
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  border-left: 3px solid var(--accent-primary);
+  padding-left: 14px;
+  text-align: left;
+  max-width: 100%;
+}
+
+/* Action Buttons */
+.action-buttons {
+  display: flex;
+  gap: 12px;
+  width: 100%;
+}
+
+.btn {
+  flex: 1;
+  padding: 12px 20px;
+  border-radius: var(--radius-md);
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.2s;
+}
+
+.btn-primary {
+  background-color: var(--danger);
+  color: white;
+  border: none;
+  box-shadow: 0 4px 6px -1px rgba(244, 63, 94, 0.2);
+}
+
+.btn-primary:hover {
+  background-color: #e11d48;
+}
+
+.btn-secondary {
+  background-color: var(--bg-tertiary);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+}
+
+.btn-secondary:hover {
+  background-color: #475569;
+}
+
+/* Footer */
+.blocked-footer {
+  font-size: 11px;
+  color: var(--text-muted);
+  font-weight: 500;
+  letter-spacing: 0.025em;
+  margin-top: 8px;
+}
