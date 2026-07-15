@@ -1,30 +1,64 @@
-# Bad Websites Blocker (NetFilter)
-<h2 align="left">About</h2>
-<div >
-    <h3 align="left">1. Describe</h3>
-     <p>
-     'NoFap' is a simple Google extension developed by B.Bilal, the goal is to get away from bad sites of the internet, search, keep focus and live naturally in peace.
-     </p>
-   <h3 align="left">2. Features</h3>
-     <p align="left">
-        1) Blocks +17000 bad sites by default.
-     </p>
-     <p align="left">
-        2) Will add more sites to the blocked list in future (Update).
-     </p>
-   <h3 align="left">3. How it works?</h3>
-   <p>
-     "When someone tries to open" or "when you redirect accidently to" a bad site it will redirect the user to a predefined page and will write the action with time in history.   
-   </p>
-   <h3 align="left">4. Language And Framworks</h3>
-   <p align="center">JavaScript - HTML - Bootstrap</p>
-</div>
-<h2 align="left">Demo</h2>
-<div align="center">
-   <p>
-      <img width="947" alt="1" src="https://user-images.githubusercontent.com/74218805/229000171-f8cf5b69-47e2-4881-bfa1-d08cbced2790.PNG">
-   </p>
-   <p>
-      <img width="313" alt="2" src="https://user-images.githubusercontent.com/74218805/229000168-d27dd71c-4799-4ff0-9f4e-96e72307156e.PNG">
-   </p>
-</div>
+# <img src="img/logo.png" align="right" width="100" alt="NetFilter Logo"> NetFilter
+
+> "Get away from bad sites, focus on what matters, and live naturally in peace."
+
+**NetFilter** is a professional, high-performance browser extension developed to block access to distraction-heavy and harmful websites, helping you keep your focus and maintain a healthy digital life.
+
+By preventing connections to unwanted sites before pages start resolving in your browser, NetFilter ensures a seamless, fast, and interruption-free browsing experience.
+
+---
+
+## 🚀 Key Features
+
+* **Pre-Navigation Filtering:** Inspects navigation requests *before* they resolve to keep your browser fast, clean, and secure.
+* **Default Protection:** Includes out-of-the-box blocks for **17,000+ domain hashes**.
+* **Custom Blocklist:** Easily add and delete custom domains to suit your unique productivity and security requirements.
+* **Activity Logs:** Locally records intercepted site attempts so you can review statistics and trends.
+* **100% Privacy-Focused:** No cloud synchronization or central APIs. All data belongs to you and remains strictly on your hard drive.
+
+---
+
+## 🛠️ Installation & Setup
+
+Since NetFilter runs locally to protect your privacy, you can load it directly into your browser:
+
+1.  **Download/Clone the Repository:**
+    ```bash
+    git clone https://github.com/your-username/NetFilter.git
+    ```
+2.  **Open Extension Management:**
+    * For **Chrome/Edge/Brave**: Navigate to `chrome://extensions/`
+    * For **Firefox**: Navigate to `about:debugging#/runtime/this-firefox`
+3.  **Enable Developer Mode:** Toggle the "Developer mode" switch in the top-right corner.
+4.  **Load Unpacked:** Click **Load unpacked** and select the root directory of the cloned NetFilter repository.
+
+---
+
+## 📈 How It Works
+
+NetFilter hooks into your browser's web request lifecycle. Before a domain resolves, the extension hashes the destination and cross-references it with its lightning-fast local list of 17,000+ blocked hashes, preventing any network connection from being established to blacklisted sites.
+
+---
+
+## 📬 Update Requests & Feedback
+
+We actively maintain the default blocklist to keep up with the changing web. 
+
+* **Requesting Additions/Removals:** To request new sites to be added to or removed from the default blocklist, please [Open an Issue](https://github.com/your-username/NetFilter/issues)
+* **SLA:** Requests are typically processed and merged within **48 hours**.
+
+---
+
+## 🔒 Privacy Policy
+
+Your privacy is our priority. NetFilter does not track, store, or transmit your browsing history, personal data, or usage metrics. Everything is stored locally on your machine.
+
+---
+
+## 👤 Author
+
+* **Developer:** Mr. Bilal Belli
+
+---
+
+*Version 1.0.0 • Developed with ❤️ for a distraction-free web.*
