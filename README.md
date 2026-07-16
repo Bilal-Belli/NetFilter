@@ -7,6 +7,9 @@
 By preventing connections to unwanted sites before pages start resolving in your browser, NetFilter ensures a seamless, fast, and interruption-free browsing experience.
 
 ---
+## Demo
+
+https://github.com/user-attachments/assets/6d82e198-50a5-428f-a055-19bfb8f0592a
 
 ## 🚀 Key Features
 
